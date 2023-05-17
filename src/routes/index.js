@@ -9,6 +9,7 @@ export default (app) => {
   //masterSiteConttroller
   app.post("/createSite", masterSiteControllers.createMasterSite);
   app.get("/getMasterSite", masterSiteControllers.getMasterSite);
+  app.post("/updateMasterSite", masterSiteControllers.updateMasterSite);
 
   //baktiTicketController
   app.post("/createBaktiTicket", baktiTicketController.createBaktiTicket);

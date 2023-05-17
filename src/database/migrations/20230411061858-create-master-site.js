@@ -7,60 +7,68 @@ export default {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      nojs: {
-        type: Sequelize.STRING,
+      site_id_name: {
+        type: Sequelize.TEXT,
+        unique: true,
       },
-      site_name: {
-        type: Sequelize.STRING,
+      name: {
+        type: Sequelize.TEXT,
+        unique: true,
       },
-      partner: {
-        type: Sequelize.STRING,
+      ip_address: {
+        type: Sequelize.TEXT,
       },
-      partner_cp: {
-        type: Sequelize.STRING,
+      onair_date: {
+        type: Sequelize.TEXT,
       },
-      site_keeper_cp: {
-        type: Sequelize.STRING,
+      topo_sustain_date: {
+        type: Sequelize.TEXT,
       },
-      province: {
-        type: Sequelize.STRING,
+      gs_sustain_date: {
+        type: Sequelize.TEXT,
       },
-      city: {
-        type: Sequelize.STRING,
-      },
-      subdistrict: {
-        type: Sequelize.STRING,
-      },
-      address: {
-        type: Sequelize.STRING,
-      },
-      ip: {
-        type: Sequelize.STRING,
-      },
-      lc: {
-        type: Sequelize.STRING,
-      },
-      gs: {
-        type: Sequelize.STRING,
-      },
-      panel_type: {
-        type: Sequelize.STRING,
-      },
-      ehub_type: {
-        type: Sequelize.STRING,
+      longitude: {
+        type: Sequelize.TEXT,
       },
       latitude: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
-      longtitude: {
-        type: Sequelize.STRING,
+      provinsi: {
+        type: Sequelize.TEXT,
+      },
+      kabupaten: {
+        type: Sequelize.TEXT,
+      },
+      kecamatan: {
+        type: Sequelize.TEXT,
+      },
+      provider_gs: {
+        type: Sequelize.TEXT,
+      },
+      address: {
+        type: Sequelize.TEXT,
+      },
+      beam_provider: {
+        type: Sequelize.TEXT,
+      },
+      cellular_operator: {
+        type: Sequelize.TEXT,
+      },
+      project_phase: {
+        type: Sequelize.TEXT,
+      },
+      build_year: {
+        type: Sequelize.TEXT,
+      },
+      version: {
+        type: Sequelize.TEXT,
       },
       created_at: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
       },
       updated_at: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
       },
     });
