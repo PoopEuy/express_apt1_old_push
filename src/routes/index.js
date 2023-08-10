@@ -1,19 +1,13 @@
-import AuthController from "../controllers/AuthController";
-import masterSiteControllers from "../controllers/masterSiteController";
-import baktiTicketController from "../controllers/baktiTicketController";
-
+import nojsUsersControllers from "../controllers/nojsUsersController";
+import nojsLoggersControllers from "../controllers/nojsLoggersControllers";
 export default (app) => {
-  //users/auth
-  app.post("/register", AuthController.signUp);
-
   //masterSiteConttroller
-  app.post("/createSite", masterSiteControllers.createMasterSite);
-  app.get("/getMasterSite", masterSiteControllers.getMasterSite);
-  app.post("/updateMasterSiteIP", masterSiteControllers.updateMasterSiteIP);
 
-  //baktiTicketController
-  app.post("/createBaktiTicket", baktiTicketController.createBaktiTicket);
-  app.get("/getBaktiTicket", baktiTicketController.getBaktiTicket);
+  app.get("/getNojsUsers", nojsUsersControllers.getNojsUsers);
+
+  //nojsLoggers
+  app.get("/getNojsLoggers", nojsLoggersControllers.getNojsLoggers);
+  app.post("/pushData", nojsLoggersControllers.pushData);
 
   // Create a catch-all route for testing the installation.
   app.all("*", (req, res) =>

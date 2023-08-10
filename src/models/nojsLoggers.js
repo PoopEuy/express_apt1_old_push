@@ -3,7 +3,7 @@ import { Model } from "sequelize";
 // const PROTECTED_ATTRIBUTES = ["password"];
 
 export default (sequelize, DataTypes) => {
-  class masterBaktiTicket extends Model {
+  class nojsLoggers extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,22 +13,34 @@ export default (sequelize, DataTypes) => {
       // define association here
     }
   }
-  masterBaktiTicket.init(
+
+  nojsLoggers.init(
     {
-      site_id: DataTypes.INTEGER,
-      no_ticket_bakti: {
+      nojs: {
         type: DataTypes.STRING,
         allowNull: {
           args: false,
-          msg: "Please enter your bakti ticket",
+          msg: "Please enter your nojs",
         },
         unique: {
           args: true,
-          msg: "bakti ticket already exists",
+          msg: "nojs already exists",
         },
       },
-      file: DataTypes.STRING,
-      note: DataTypes.STRING,
+
+      time_local: DataTypes.STRING,
+      eh1: DataTypes.INTEGER,
+      eh2: DataTypes.INTEGER,
+      vsat_curr: DataTypes.INTEGER,
+      bts_curr: DataTypes.INTEGER,
+      load3: DataTypes.INTEGER,
+      batt_volt1: DataTypes.INTEGER,
+      batt_volt2: DataTypes.INTEGER,
+      edl1: DataTypes.INTEGER,
+      edl2: DataTypes.INTEGER,
+      pms_state: DataTypes.STRING,
+      json_data: DataTypes.STRING,
+
       createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -42,10 +54,12 @@ export default (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "masterBaktiTicketModel",
-      tableName: "master_bakti_ticket",
+      modelName: "nojsLoggersModel",
+      tableName: "nojs_loggers",
+      timestamps: true,
       // timestamps: false,
     }
   );
-  return masterBaktiTicket;
+  nojsLoggers.removeAttribute("id");
+  return nojsLoggers;
 };
